@@ -11,7 +11,7 @@ namespace SonyaPW_20
         static void Main(string[] args)
         {
             Console.Write("Введите номер практической: ");
-            uint numPract = uint.Parse(Console.ReadLine());
+            double numPract = double.Parse(Console.ReadLine());
             switch (numPract)
             {
                 case 1:
@@ -139,6 +139,185 @@ namespace SonyaPW_20
                         an++;
                     }
                     while (an < 100);
+
+                    break;
+                case 10.1:
+                    //задание 1
+                    Console.WriteLine("введите количество значений Y: ");
+                    int Y =int.Parse( Console.ReadLine());
+                    int[] mass = new int[Y];
+                    Random random = new Random();
+                    double sred=0;
+                    uint kol=0;
+                    for (int i = 0; i < mass.Length; i++)
+                    {
+                        mass[i] = random.Next(-10,20);
+                        Console.Write(mass[i]+ " ");
+                    }
+                    for (int i = 0; i < mass.Length; i++)
+                    {
+                        if (mass[i]%2==0 && mass[i]>0)
+                        {
+                            sred += mass[i];
+                        }
+                        if (mass[i]<0)
+                        {
+                            kol++;
+                        }
+                    }
+                    Console.WriteLine("среднее арифметоческое положительных чисел равно: {0}", sred/Y);
+                    Console.WriteLine("количество отрицательных чисел равно {0}", kol) ;
+                    
+
+                    break;
+                case 10.2:
+                    //задание 2
+                    Console.WriteLine("введите нат. число W");
+                    int W = int.Parse(Console.ReadLine());
+                    int per = W;
+                    int suma = 0;
+                    int digit;
+                    while (W>0)
+                    {
+                        digit = W % 10;
+                        if (digit%3==0)
+                        {
+                            suma += digit;
+                        }
+                        W = W / 10;
+                    }
+                    char[] arr = per.ToString().ToCharArray();
+                    Console.WriteLine("сумма кратным трем чисел равна:{0}",suma);
+                    Console.WriteLine("первая цифра равна {0}, последняя равна {1}",arr[0],arr[arr.Length-1]);
+                    break;
+                case 10.3:
+                    Console.WriteLine("введите количество значений mass: ");
+                    int yep = int.Parse(Console.ReadLine());
+                    int[] mass1 = new int[yep];
+                    Random random1 = new Random();
+                    int pros=1;
+                    for (int i = 0; i < mass1.Length; i++)
+                    {
+                        mass1[i] = random1.Next(-10, 20);
+                        Console.Write(mass1[i] + " ");
+                    }
+                    for (int i = 0; i < mass1.Length; i++)
+                    {
+                        if (mass1[i]%2==0 && mass1[i]%5==0)
+                        {
+                            pros *= mass1[i];
+                        }
+                    }
+                    if (pros !=1)
+                    {
+                        Console.WriteLine("произведение членов кратных 2 и 5 равно {0}", pros);
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("таких чисел нету)");
+                    }
+                    break;
+                case 11:
+                    Console.WriteLine("введите количество значений mass: ");
+                    int yep1 = int.Parse(Console.ReadLine());
+                    int[] mass2 = new int[yep1];
+                    Random random2 = new Random();
+                    uint col=0;
+                    for (int i = 0; i < mass2.Length; i++)
+                    {
+                        mass2[i] = random2.Next(-20, 20);
+                        Console.Write(mass2[i] + " ");
+                    }
+                    for (int i = 0; i < mass2.Length; i++)
+                    {
+                        if (mass2[i] % 5 == 0 && mass2[i]<0)
+                        {
+                            col++;
+                        }
+                    }
+                    Console.WriteLine("количество отрицательных элементов кратных 5 равно: {0}", col);
+                    break;
+                case 12:
+
+                    int[] massi = new int[12];
+                    for (int i = 0; i < massi.Length; i++)
+                    {
+                        Console.WriteLine("Введите значение элементу {0}", i);
+                        massi[i] = int.Parse(Console.ReadLine());
+                    }
+                    int min=50;
+                    int minNum=0;
+                    int summ=0;
+                    for (int i = 0; i < massi.Length; i++)
+                    {
+                        if (massi[i]<=min)
+                        {
+                            min = massi[i];
+                            minNum = i;
+                        }
+                    }
+                    Console.WriteLine("3232323");
+                    for (int i = minNum; i < massi.Length; i++)
+                    {
+                        summ += massi[i];
+                    }
+                    Console.WriteLine("2323");
+                    Console.WriteLine("сумма чисел после минимального элемента равна: {0}",summ-1);
+                    break;
+                case 13.1:
+                    Console.WriteLine("введите количество значений mass: ");
+                    int yep2 = int.Parse(Console.ReadLine());
+                    int[] mass3 = new int[yep2];
+                    Random random3 = new Random();
+                    uint numbZero=0;
+                    uint numbPlus=0;
+                    int prost;
+                    for (int i = 0; i < mass3.Length; i++)
+                    {
+                        mass3[i] = random3.Next(-20, 20);
+                        if (mass3[i]==0)
+                        {
+                            numbZero++;
+                        }
+                        if (mass3[i]>0)
+                        {
+                            numbPlus++;
+                        }
+                        Console.Write(mass3[i] + " ");
+                    }
+                    prost = mass3[3];
+                    mass3[3] = mass3[10];
+                    mass3[10]=prost;
+                    for (int i = 0; i < mass3.Length; i++)
+                    {
+                        Console.Write(mass3[i]+" ");
+                    }
+                    Console.WriteLine("количество элементов равных нулю {0}, количество отрицательных элементов {1}",numbZero,numbPlus);
+                    break;
+                case 13.2:
+                    Console.WriteLine("введите количество значений mass: ");
+                    int yepe = int.Parse(Console.ReadLine());
+                    int[] mass23 = new int[yepe];
+                    Random rando = new Random();
+                    for (int i = 0; i < mass23.Length; i++)
+                    {
+                        mass23[i] = rando.Next(-20, 20);
+                        Console.Write(mass23[i] + " ");
+                    }
+                    Console.Write("введите число C : ");
+                    int C = int.Parse(Console.ReadLine());
+                    for (int i = 0; i < mass23.Length; i++)
+                    {
+                        if (mass23[i]>C)
+                        {
+                            mass23[i] = 0;
+                        }
+                    }
+                    for (int i = 0; i < mass23.Length; i++)
+                    {
+                        Console.Write(mass23[i] + " ");
+                    }
 
                     break;
             }
