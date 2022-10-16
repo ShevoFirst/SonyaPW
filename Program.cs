@@ -257,12 +257,10 @@ namespace SonyaPW_20
                             minNum = i;
                         }
                     }
-                    Console.WriteLine("3232323");
                     for (int i = minNum; i < massi.Length; i++)
                     {
                         summ += massi[i];
                     }
-                    Console.WriteLine("2323");
                     Console.WriteLine("сумма чисел после минимального элемента равна: {0}",summ-1);
                     break;
                 case 13.1:
@@ -364,6 +362,30 @@ namespace SonyaPW_20
                             Console.Write(mass234d[i] + " ");
                         }
                     }
+                    break;
+                case 15:
+                    int[] massiw = new int[12];
+                    for (int i = 0; i < massiw.Length; i++)
+                    {
+                        Console.WriteLine("Введите значение элементу {0}", i);
+                        massiw[i] = int.Parse(Console.ReadLine());
+                    }
+                    int min1 = 50;
+                    int minNum1 = 0;
+                    int summ3 = 0;
+                    for (int i = 0; i < massiw.Length; i++)
+                    {
+                        if (massiw[i] <= min1)
+                        {
+                            min = massiw[i];
+                            minNum1 = i;
+                        }
+                    }
+                    for (int i = minNum1; i < massiw.Length; i++)
+                    {
+                        summ3 += massiw[i];
+                    }
+                    Console.WriteLine("сумма чисел после минимального элемента равна: {0}", summ3 - 1);
                     break;
             }
         }
