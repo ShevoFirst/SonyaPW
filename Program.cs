@@ -309,7 +309,7 @@ namespace SonyaPW_20
                     int C = int.Parse(Console.ReadLine());
                     for (int i = 0; i < mass23.Length; i++)
                     {
-                        if (mass23[i]>C)
+                        if (mass23[i] > C)
                         {
                             mass23[i] = 0;
                         }
@@ -318,7 +318,52 @@ namespace SonyaPW_20
                     {
                         Console.Write(mass23[i] + " ");
                     }
+                    break;
+                case 14.1:
+                    Console.WriteLine("введите количество значений mass: ");
+                    int yeper = int.Parse(Console.ReadLine());
+                    int[] mass234 = new int[yeper];
+                    Random randon = new Random();
 
+                    for (int i = 0; i < mass234.Length; i++)
+                    {
+                        mass234[i] = randon.Next(30, 70);
+                        Console.Write(mass234[i] + " ");
+                    }
+                    Console.WriteLine("введите число F");
+                    int Fe = int.Parse(Console.ReadLine());
+
+                    Console.WriteLine("Введите номер элемента после которого вставить число {0}", Fe);
+                    int no = int.Parse(Console.ReadLine());
+                    mass234[no + 1] = Fe;
+                    for (int i = 0; i < mass234.Length; i++)
+                    {
+                        Console.Write(mass234[i] + " ");
+                    }
+                    break;
+                case 14.2:
+                    Console.WriteLine("введите количество значений mass: ");
+                    int yeperd = int.Parse(Console.ReadLine());
+                    int[] mass234d = new int[yeperd];
+                    Random randond = new Random();
+
+                    for (int i = 0; i < mass234d.Length; i++)
+                    {
+                        mass234d[i] = randond.Next(30, 70);
+                        Console.Write(mass234d[i] + " ");
+                    }
+                    Console.WriteLine();
+                    for (int i = 0; i < mass234d.Length; i++)
+                    {
+                        if (mass234d[i] % 2 == 0)
+                        {
+                            Console.Write("39 " + mass234d[i] + " ");
+                        }
+                        else
+                        {
+                            Console.Write(mass234d[i] + " ");
+                        }
+                    }
                     break;
             }
         }
